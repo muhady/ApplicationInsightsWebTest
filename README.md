@@ -9,7 +9,7 @@ ARM template will do the same action as it is showed on the following picture:
   <img src="img/webtest.png" width="100%" title="hover text">
 </p>
 
-#How to run ARM template
+## How to run ARM template
 
 **Install Azure CLI** 
 
