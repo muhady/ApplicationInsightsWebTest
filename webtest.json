@@ -4,6 +4,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webTestName": { "type": "string" },
+        "appName": { "type": "string" },
         "URL": { "type": "string" }
     },
     "variables": {
@@ -16,6 +17,9 @@
             "apiVersion": "2015-05-01",
             "type": "Microsoft.Insights/webtests",
             "location": "westeurope",
+            "tags": {
+                "[concat('hidden-link:', resourceId('Microsoft.Insights/components', parameters('appName')))]": "Resource"
+              },
             "properties": {
                 "SyntheticMonitorId": "[parameters('webTestName')]",
                 "Name": "[parameters('webTestName')]",
