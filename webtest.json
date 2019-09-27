@@ -1,0 +1,84 @@
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "webTestName": { "type": "string" },
+        "URL": { "type": "string" }
+    },
+    "variables": {
+        
+    },
+    "resources": [
+        {
+            "id": "[resourceId('Microsoft.Insights/webtests', parameters('webTestName'))]",
+            "name": "[parameters('webTestName')]",
+            "apiVersion": "2015-05-01",
+            "type": "Microsoft.Insights/webtests",
+            "location": "westeurope",
+            "properties": {
+                "SyntheticMonitorId": "[parameters('webTestName')]",
+                "Name": "[parameters('webTestName')]",
+                "Description": "",
+                "Enabled": true,
+                "Frequency": 300,
+                "Timeout": 120,
+                "Kind": "ping",
+                "RetryEnabled": true,
+            "Locations": [
+                {
+                "Id": "emea-nl-ams-azr"
+                },
+                {
+                "Id": "us-ca-sjc-azr"
+                },
+                {
+                "Id": "emea-ru-msa-edge"
+                },
+                {
+                "Id": "emea-se-sto-edge"
+                },
+                {
+                "Id": "apac-sg-sin-azr"
+                },
+                {
+                "Id": "us-tx-sn1-azr"
+                },
+                {
+                "Id": "us-il-ch1-azr"
+                },
+                {
+                "Id": "emea-gb-db3-azr"
+                },
+                {
+                "Id": "apac-jp-kaw-edge"
+                },
+                {
+                "Id": "emea-ch-zrh-edge"
+                },
+                {
+                "Id": "emea-fr-pra-edge"
+                },
+                {
+                "Id": "us-va-ash-azr"
+                },
+                {
+                "Id": "apac-hk-hkn-azr"
+                },
+                {
+                "Id": "us-fl-mia-edge"
+                },
+                {
+                "Id": "latam-br-gru-edge"
+                },
+                {
+                "Id": "emea-au-syd-edge"
+                }
+            ],
+            "Configuration": {
+                "WebTest": "[concat('<WebTest ... Name=\"', parameters('webTestName') , '\" ... Url=\"', parameters('URL'), '\" ...>')]" 
+            }
+            }
+        }
+    ]
+}
