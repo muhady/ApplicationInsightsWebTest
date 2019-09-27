@@ -4,3 +4,6 @@ If you need to monitor the availability of any website you can use Azure Appicat
 
 This sample describe how to create and deploy web test throught ARM templates.
 
+<p align="center">
+  <img src="img/webtest.png" width="100%" title="hover text">
+</p>
